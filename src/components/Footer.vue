@@ -6,7 +6,7 @@
           <img class="tw-w-full" width="152" height="30" src="@/assets/images/logo2.svg" alt="логотип агидель-инвест-строй">
         </a>
         <div class="tw-mb-20 xl:tw-mb-0 tw-basis-full xl:tw-basis-[368px] tw-text-[8px] xl:tw-text-xxs tw-leading-100 tw-mr-20">
-          © 2003-2022, ООО СЗ «Агидель-ИнвестСтрой». Опубликованная на сайте информация носит рекламный характер и не является публичной офертой.
+          © 2003-{{ currentYear }}, ООО СЗ «Агидель-ИнвестСтрой». Опубликованная на сайте информация носит рекламный характер и не является публичной офертой.
           Проектная декларация на&nbsp;сайте <a class="tw-text-orange tw-underline" :href="$store.state.domrf" target="_blank">дом.рф</a>
         </div>
 
@@ -60,10 +60,17 @@ export default {
           name: '#vk',
           link: 'https://vk.com/agidelinvest'
         }
-      ]
+      ],
+      currentYear: this.getCurrentYear(),
     }
-  }
-}
+  },
+  methods: {
+    getCurrentYear() {
+      const dt = new Date();
+      return dt.getFullYear();
+    }
+  },
+};
 </script>
 
 <style scoped>

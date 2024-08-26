@@ -36,10 +36,14 @@
 
     <!-- Navigation arrows -->
     <button class="swiper-prev" @click="swiper.slidePrev()">
-      <AppIcon name="swiper-arrow-prev" size="100%" />
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.7149 16L11.9999 24L19.7149 32L21.0115 30.6553L15.5102 24.9507L36 24.9507L36 23.0491L15.5104 23.0491L21.0115 17.3447L19.7149 16Z" fill="white"/>
+      </svg>
     </button>
     <button class="swiper-next" @click="swiper.slideNext()">
-      <AppIcon name="swiper-arrow-prev" size="100%" />
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.7149 16L11.9999 24L19.7149 32L21.0115 30.6553L15.5102 24.9507L36 24.9507L36 23.0491L15.5104 23.0491L21.0115 17.3447L19.7149 16Z" fill="white"/>
+      </svg>
     </button>
   </swiper>
 </template>
@@ -91,6 +95,8 @@ export default {
   z-index: 10;
   top: 50%;
   transform: translateY(-50%);
+  background: #081924;
+  border-radius: 50%;
 }
 
 .swiper-prev {
