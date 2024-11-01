@@ -60,7 +60,7 @@ export default {
     const store = useStore();
 
     const filter = ref({
-      liter: null,
+      liter: [{"id":3,"label":"2"}],
       storey: null,
       rooms: null,
       square: null,
