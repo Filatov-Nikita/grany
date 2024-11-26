@@ -21,10 +21,10 @@
               class="tw-ml-24 md:tw-mt-6 tw-basis-full md:tw-basis-[210px]"
               v-model="filter.square"
             />
-            <SelectFeatures
+            <!-- <SelectFeatures
               class="tw-ml-24 md:tw-mt-6 tw-basis-full md:tw-basis-[210px]"
               v-model="filter.features"
-            />
+            /> -->
           </div>
         </section>
       </div>

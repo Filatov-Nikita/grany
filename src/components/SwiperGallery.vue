@@ -86,6 +86,7 @@ export default {
 .gallery-swiper {
   width: 100%;
   height: 100%;
+  max-height: 85vh;
 }
 
 .swiper-next, .swiper-prev {

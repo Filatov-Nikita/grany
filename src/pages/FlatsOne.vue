@@ -44,10 +44,10 @@
               Без мебели
             </button>
           </div>
-          <div class="tw-p-40" v-show="tab === 1">
+          <div class="tw-p-40 tw-flex tw-justify-center" v-show="tab === 1">
             <img :src="flat.images[2]" alt="" />
           </div>
-          <div class="tw-p-40" v-show="tab === 2">
+          <div class="tw-p-40 tw-flex tw-justify-center" v-show="tab === 2">
             <img :src="flat.images[0]" alt="" />
           </div>
           <!-- <img :src="flat.images[2]" alt=""/> -->

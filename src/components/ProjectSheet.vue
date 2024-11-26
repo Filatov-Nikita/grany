@@ -308,7 +308,7 @@ function getEng() {
       margin-left: -100px;
     }
     @screen 2xl {
-      height: 734px;
+      height: 582px;
       margin-left: -150px;
     }
   }
@@ -323,7 +323,7 @@ function getEng() {
   }
   @screen 2xl {
     grid-template-columns: 155px 1fr;
-    margin-top: -212px;
+    margin-top: -70px;
   }
   .project-sheet__title {
     @screen xl {
@@ -362,7 +362,7 @@ function getEng() {
     grid-column: 5 / 8;
   }
   @screen 2xl {
-    margin-top: 130px;
+    margin-top: 265px;
     grid-template-columns: 150px 295px 410px;
   }
   .project-sheet__content {

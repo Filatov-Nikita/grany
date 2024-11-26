@@ -32,8 +32,8 @@ export default {
     },
     async createPDF({ rootGetters }, params) {
       return await FlatsAPI.pdf({
-        client_id: "2",
-        client_secret: "JdMX1x1Adj21PmB09TJ3i1RmcDQuzEQ6ILkbT5Ew",
+        client_id: process.env.VUE_APP_CLIENT_ID,
+        client_secret: process.env.VUE_APP_CLIENT_SECRET,
         header_tel_prefix: rootGetters.prefixhone,
         header_tel: rootGetters.shortPhone,
         header_logo_image: "https://2apps.ru/img/logograni.png",

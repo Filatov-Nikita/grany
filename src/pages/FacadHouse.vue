@@ -483,7 +483,7 @@
               <g
                 class="storey"
                 @click="onClick(11)"
-                @mouseenter="enter(1)"
+                @mouseenter="enter(11)"
                 @mouseleave="leave(11)">
                 <path d="M759 439H968V465H759V439Z" fill="#FF8413" />
                 <path
