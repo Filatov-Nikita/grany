@@ -26,7 +26,7 @@
         </div>
 
         <div class="2xl:tw-pb-40">
-          <a class="tw-w-full tw-block md:tw-max-w-[200px]" href="https://ucams.ufanet.ru/api/internal/embed/1667795577LVX928/?ttl=3600&autoplay=true&mute=true" target="_blank">
+          <a class="tw-w-full tw-block md:tw-max-w-[200px]" href="https://ucams.ufanet.ru/api/internal/embed/1730358485DMG0/?ttl=3600&autoplay=true&mute=true" target="_blank">
             <AppButton class="tw-w-full tw-block" tag="span">Онлайн-трансляция</AppButton>
           </a>
         </div>

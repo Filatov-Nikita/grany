@@ -21,10 +21,10 @@
               class="tw-ml-24 md:tw-mt-6 tw-basis-full md:tw-basis-[210px]"
               v-model="filter.square"
             />
-            <SelectFeatures
+            <!-- <SelectFeatures
               class="tw-ml-24 md:tw-mt-6 tw-basis-full md:tw-basis-[210px]"
               v-model="filter.features"
-            />
+            /> -->
           </div>
         </section>
       </div>
@@ -60,7 +60,7 @@ export default {
     const store = useStore();
 
     const filter = ref({
-      liter: null,
+      liter: [{"id":3,"label":"2"}],
       storey: null,
       rooms: null,
       square: null,
