@@ -2,7 +2,7 @@
   <header class="tw-relative tw-z-10" v-click-outside="onOutside">
     <div class="tw-border-b tw-border-dark tw-py-[13px] lg:tw-py-[23px] 2xl:tw-py-[17px] tw-bg-primary tw-backdrop-blur-[14px]" :class="[ opacityClass ]">
       <div class="wrapper 2xl:tw-max-w-none 2xl:tw-px-40">
-        <div class="tw-flex tw-items-center tw-justify-between lg:tw-justify-start">
+        <div class="tw-flex tw-items-center tw-justify-between lg:tw-justify-start tw-whitespace-nowrap">
           <router-link class="logo lg:tw-mr-16 xl:tw-mr-40 2xl:tw-mr-[87px]" to="/">
             <img
               class="tw-w-full"
@@ -56,7 +56,7 @@
 
           <div class="tw-hidden lg:tw-block tw-leading-120 lg:tw-mr-20 xl:tw-mr-[42px] 2xl:tw-mr-[124px]">
             <a
-              class="tw-font-[nexa-reg] lg:tw-text-sm xl:tw-text-md tw-mb-2 tw-block lg:hover:tw-opacity-90 tw-tracking-tighter"
+              class="lg:tw-text-sm xl:tw-text-[18px] tw-mb-2 tw-block lg:hover:tw-opacity-90 tw-tracking-tighter"
               :href="`tel:${$store.getters.unmaskedPhone($store.state.headerPhone)}`"
             >
               {{ $store.state.headerPhone }}
