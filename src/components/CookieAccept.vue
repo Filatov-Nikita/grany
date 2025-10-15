@@ -1,8 +1,13 @@
 <template>
   <Transition class="tw-transition-opacity tw-duration-300" leave-active-class="tw-opacity-0">
-    <div v-if="show" class="tw-rounded-md tw-bg-primary tw-flex tw-items-center tw-px-12 tw-py-10">
-      <p class=" tw-mr-20">Мы используем куки, чтобы пользоваться сайтом было удобно</p>
-      <AppButton @click="accept">Ок</AppButton>
+    <div v-if="show" class="tw-rounded-md tw-bg-primary tw-p-16">
+      <p class="tw-text-md">Мы используем файлы cookie!</p>
+      <p class="tw-mt-8">
+        Они нужны, чтобы обеспечить вам максимальное удобство на нашем веб-сайте.
+        Вы можете запретить передачу этих данных в настройках вашего браузера.
+        Продолжая, вы соглашаетесь с нашей <a class="tw-underline" href="/policy.pdf" target="_blank">Политикой конфедициальности</a>.
+      </p>
+      <AppButton class="tw-mt-16" @click="accept">Принять</AppButton>
     </div>
   </Transition>
 </template>
