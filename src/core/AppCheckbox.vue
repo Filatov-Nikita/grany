@@ -3,11 +3,11 @@
     <div class="tw-pb-20 tw-relative" v-bind="$attrs">
       <div class="tw-flex tw-items-center" @click="handleChange(!value)">
         <div
-          class="tw-w-14 tw-h-14 tw-rounded-full tw-border tw-border-white tw-leading-[12px] tw-text-center tw-cursor-pointer"
+          class="tw-w-14 tw-h-14 tw-shrink-0 tw-rounded-full tw-border tw-border-white tw-cursor-pointer tw-py-[3px] tw-text-center tw-text-[0px]"
           :class="{ 'tw-border-negative': errorMessage }"
           role="checkbox"
         >
-          <svg v-show="value" class="tw-inline-block" width="5px" height="6px">
+          <svg v-show="value" width="5px" height="6px" class="tw-inline-block">
             <use xlink:href="/sprite.svg#romb"></use>
           </svg>
         </div>

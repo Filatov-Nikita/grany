@@ -30,8 +30,12 @@
             Отправить
           </AppButton>
         </div>
-        <AppCheckbox class="tw-mt-24" name="agreement" label="Условия" rules="required">
-          Я согласен с <AppLink native to="/policy.pdf" target="_blank">условиями передачи информации</AppLink>
+        <AppCheckbox class="tw-mt-24" name="agreement" label="Условия" rules="required" :value="false">
+          <span class="tw-text-xs tw-leading-120">
+            Я соглашаюсь на&nbsp;обработку моих персональных данных в&nbsp;соответствии
+            с&nbsp;<AppLink native to="/policy.pdf" target="_blank">Политикой&nbsp;конфиденциальности</AppLink>
+            и&nbsp;<AppLink native to="/sogl.pdf" target="_blank">Согласием на&nbsp;обработку персональных данных</AppLink>
+          </span>
         </AppCheckbox>
       </Form>
     </div>
