@@ -22,6 +22,7 @@
             name="cellphone"
             label="Номер телефона"
           />
+          <FormSecretInput class="tw-pl-10 tw-pt-12 tw-basis-full" />
           <AppButton
             class="tw-ml-[10px] tw-mt-12 2xl:tw-ml-15 tw-basis-full 2xl:tw-basis-[175px] tw-self-start"
             type="submit"
@@ -43,6 +44,8 @@
   </div>
 </template>
 <script>
+import FormSecretInput from '@/components/FormSecretInput.vue';
+
 export default {
   props: {
     creditSum: {
@@ -56,6 +59,9 @@ export default {
       await this.$store.dispatch('getFeedback', { name, cellphone, theme });
       this.$notify({ type: 'success', text: 'Ваша заявка успешно отправлена!' });
     }
-  }
+  },
+  components: {
+    FormSecretInput,
+  },
 }
 </script>

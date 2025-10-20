@@ -46,6 +46,10 @@ import { computed, ref, toRef, watch } from 'vue';
 export default {
   props: {
     ...Field.props,
+    validateOnValueUpdate: {
+      default: true,
+      type: Boolean,
+    },
     type: {
       default: 'text',
       type: String
@@ -64,7 +68,8 @@ export default {
     const modelValue = toRef(props, 'modelValue');
     const input = useField(props.name, props.rules, {
       initialValue: props.modelValue,
-      label: props.label
+      label: props.label,
+      validateOnValueUpdate: props.validateOnValueUpdate,
     });
 
     const hasValue = computed(() => input.value.value !== '');

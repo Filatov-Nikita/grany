@@ -40,4 +40,14 @@ export default () => {
     if(!value) return true;
     return /^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/.test(value)
   });
+
+  defineRule('secret', function (value, params) {
+    if(!value) return true;
+    const n1 = parseInt(params[0]);
+    const n2 = parseInt(params[1]);
+    const val = parseInt(value);
+    if(isNaN(n1) || isNaN(n2)) return 'Неверные параметры';
+    if(isNaN(val) || n1 * n2 !== val) return 'Неверный ответ';
+    return true;
+  });
 }
