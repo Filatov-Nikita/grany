@@ -31,7 +31,7 @@
             Отправить
           </AppButton>
         </div>
-        <AppCheckbox class="tw-mt-24" name="agreement" label="Условия" rules="required" :value="false">
+        <AppCheckbox class="tw-mt-24" name="sogl" label="Условия" :value="false">
           <span class="tw-text-xs tw-leading-120">
             Я соглашаюсь на&nbsp;обработку моих персональных данных в&nbsp;соответствии
             с&nbsp;<AppLink native to="/policy.pdf" target="_blank">Политикой&nbsp;конфиденциальности</AppLink>
@@ -54,9 +54,14 @@ export default {
     }
   },
   methods: {
-    async submit({ name, cellphone }) {
+    async submit({ name, cellphone, sogl }) {
       const theme = `Заявка на ипотеку (сумма кредита ${this.creditSum} руб)`;
-      await this.$store.dispatch('getFeedback', { name, cellphone, theme });
+      await this.$store.dispatch('getFeedback', {
+        name,
+        cellphone,
+        theme,
+        sogl,
+      });
       this.$notify({ type: 'success', text: 'Ваша заявка успешно отправлена!' });
     }
   },

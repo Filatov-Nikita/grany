@@ -31,7 +31,7 @@
             Отправить
           </AppButton>
         </div>
-        <AppCheckbox class="tw-mt-24" name="agreement" label="Условия" rules="required" :value="false">
+        <AppCheckbox class="tw-mt-24" name="sogl" label="Условия" :value="false">
           <span class="tw-text-xs tw-leading-120">
             Я соглашаюсь на&nbsp;обработку моих персональных данных в&nbsp;соответствии
             с&nbsp;<AppLink native to="/policy.pdf" target="_blank">Политикой&nbsp;конфиденциальности</AppLink>
@@ -48,8 +48,13 @@ import FormSecretInput from '@/components/FormSecretInput.vue';
 
 export default {
   methods: {
-    async submit({ name, cellphone }) {
-      await this.$store.dispatch('getFeedback', { name, cellphone, theme: 'Обратный звонок' });
+    async submit({ name, cellphone, sogl }) {
+      await this.$store.dispatch('getFeedback', {
+        name,
+        cellphone,
+        theme: 'Обратный звонок',
+        sogl,
+      });
       this.$notify({ type: 'success', text: 'Ваша заявка успешно отправлена!' });
       this.$ym.fireCallbackGoal();
     }
