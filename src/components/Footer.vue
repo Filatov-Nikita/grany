@@ -57,8 +57,8 @@ export default {
     return {
       soc: [
         {
-          name: '#wts',
-          link: 'https://wa.me/73472242041'
+          name: '#max',
+          link: 'https://max.ru/id0278093946_bot'
         },
         // {
         //   name: '#tg',
