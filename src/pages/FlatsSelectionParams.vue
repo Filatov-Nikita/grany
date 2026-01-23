@@ -64,7 +64,10 @@ export default {
       storey: null,
       rooms: null,
       square: null,
-      features: null
+      features: null,
+      sort: 'price',
+      sortOrder: 'desc',
+      status: 'free',
     });
 
     const filterGetters = {
@@ -88,7 +91,16 @@ export default {
       },
       features: (filter, value) => {
         Object.values(value).forEach(item => filter[item.value] = 1);
-      }
+      },
+      sort: (filter, value) => {
+        filter.sort_by = value;
+      },
+      sortOrder: (filter, value) => {
+        filter.sort_order = value;
+      },
+      status: (filter, value) => {
+        filter.status = value;
+      },
     }
 
     const flats = ref(null);
