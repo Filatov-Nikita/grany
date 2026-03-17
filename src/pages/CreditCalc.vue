@@ -28,7 +28,7 @@
               </button>
             </template>
             <template v-if="showedCaption" #caption>
-              <p class="tw-text-orange">не менее 15% от стоимости квартиры</p>
+              <p class="tw-text-orange">не менее 20% от стоимости квартиры</p>
             </template>
           </AppInput>
           <AppInput
@@ -147,10 +147,10 @@ export default {
           alt: 'ВТБ',
           src: require('@/assets/images/bank-partners/vtb.svg'),
         },
-        {
-          alt: 'Альфа банк',
-          src: require('@/assets/images/bank-partners/alfa.svg'),
-        },
+        // {
+        //   alt: 'Альфа банк',
+        //   src: require('@/assets/images/bank-partners/alfa.svg'),
+        // },
         {
           alt: 'Дом рф',
           src: require('@/assets/images/bank-partners/domrf.svg'),

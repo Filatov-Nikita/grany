@@ -7,7 +7,7 @@
         </a>
         <div class="tw-mb-12 xl:tw-mb-0 tw-basis-full xl:tw-basis-[300px] tw-text-[8px] xl:tw-text-xxs tw-leading-100 tw-mr-20">
           © 2003-{{ currentYear }}, ООО СЗ «Агидель-ИнвестСтрой». Опубликованная на сайте информация носит рекламный характер и не является публичной офертой.
-          Проектная декларация на&nbsp;сайте <a class="tw-text-orange tw-underline" :href="$store.state.domrf" target="_blank">дом.рф</a>
+          Проектная декларация на&nbsp;сайте <a class="tw-text-orange tw-underline" :href="$store.state.domrf" target="_blank">наш.дом.рф </a>
         </div>
 
         <div class="tw-hidden 2xl:tw-block tw-grow"></div>
@@ -39,8 +39,8 @@
 
         <div class="tw-grow xl:tw-hidden"></div>
 
-        <div class="tw-basis-[120px] lg:tw-basis-[126px] tw-mr-6 tw-pr-6 lg:tw-mr-20 lg:tw-pr-20 tw-py-2 tw-text-xxs tw-leading-120 tw-border-r tw-border-r-white tw-border-solid">
-          3D-визуализация, дизайн и разработка
+        <div class="tw-basis-[108px] lg:tw-basis-[126px] tw-mr-6 tw-pr-6 lg:tw-mr-20 lg:tw-pr-20 tw-py-2 tw-text-xxs tw-leading-120 tw-border-r tw-border-r-white tw-border-solid">
+          3Д-визуализация, дизайн и разработка
         </div>
 
         <a href="#" class="tw-w-[78px] tw-h-[25px]">

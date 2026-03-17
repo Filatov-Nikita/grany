@@ -4,23 +4,20 @@
       <div class="wrapper">
         <h1 class="h1">Подбор по параметрам</h1>
         <section class="tw-pb-120 tw-pt-80">
-          <div class="tw-flex tw-flex-wrap -tw-ml-24 md:-tw-mt-6 md:tw-max-w-[720px] 2xl:tw-max-w-[1172px]">
+          <div
+            class="tw-flex tw-flex-wrap -tw-ml-24 md:-tw-mt-6 md:tw-max-w-[720px] 2xl:tw-max-w-[1172px]">
             <SelectLiter
               class="tw-ml-24 md:tw-mt-6 tw-basis-full md:tw-basis-[210px]"
-              v-model="filter.liter"
-            />
+              v-model="filter.liter" />
             <SelectStoreys
               class="tw-ml-24 md:tw-mt-6 tw-basis-full md:tw-basis-[210px]"
-              v-model="filter.storey"
-            />
+              v-model="filter.storey" />
             <SelectRooms
               class="tw-ml-24 md:tw-mt-6 tw-basis-full md:tw-basis-[210px]"
-              v-model="filter.rooms"
-            />
+              v-model="filter.rooms" />
             <SelectSquare
               class="tw-ml-24 md:tw-mt-6 tw-basis-full md:tw-basis-[210px]"
-              v-model="filter.square"
-            />
+              v-model="filter.square" />
             <!-- <SelectFeatures
               class="tw-ml-24 md:tw-mt-6 tw-basis-full md:tw-basis-[210px]"
               v-model="filter.features"
@@ -31,14 +28,18 @@
     </div>
     <section class="tw-bg-white tw-pt-80">
       <div class="wrapper">
-        <div :class="{ 'tw-absolute': flats }" v-if="$store.getters['loaders/is']('loading flats')">
+        <div
+          :class="{ 'tw-absolute': flats }"
+          v-if="$store.getters['loaders/is']('loading flats')">
           <Spinner size="100px" />
         </div>
-        <template v-if="flats">
-          <p class="lg:tw-text-lg tw-text-md lg:tw-font-extrabold tw-text-secondary tw-leading-100 tw-mb-30">
-            Найдено {{ flats.length }} квартир
+
+        <template v-if="freeFlats">
+          <p
+            class="lg:tw-text-lg tw-text-md lg:tw-font-extrabold tw-text-secondary tw-leading-100 tw-mb-30">
+            Найдено {{ freeFlats.length }} квартир
           </p>
-          <FlatsParamsList :items="flats" />
+          <FlatsParamsList :items="freeFlats" />
         </template>
       </div>
     </section>
@@ -46,21 +47,21 @@
 </template>
 
 <script>
-import FlatsParamsList from '@/components/FlatsParamsList.vue';
-import SelectFeatures from '@/components/SelectFeatures.vue';
-import SelectLiter from '@/components/SelectLiter.vue';
-import SelectRooms from '@/components/SelectRooms.vue';
-import SelectStoreys from '@/components/SelectStoreys.vue';
-import SelectSquare from '@/components/SelectSquare.vue';
-import { ref, watch } from 'vue';
-import { useStore } from 'vuex';
+import FlatsParamsList from "@/components/FlatsParamsList.vue";
+import SelectFeatures from "@/components/SelectFeatures.vue";
+import SelectLiter from "@/components/SelectLiter.vue";
+import SelectRooms from "@/components/SelectRooms.vue";
+import SelectStoreys from "@/components/SelectStoreys.vue";
+import SelectSquare from "@/components/SelectSquare.vue";
+import { computed, ref, watch } from "vue";
+import { useStore } from "vuex";
 
 export default {
   setup() {
     const store = useStore();
 
     const filter = ref({
-      liter: [{"id":3,"label":"2"}],
+      liter: [{ id: 3, label: "2" }],
       storey: null,
       rooms: null,
       square: null,
@@ -72,15 +73,15 @@ export default {
 
     const filterGetters = {
       liter: (filter, value) => {
-        if(value.length <= 0) return;
-        filter.house_id = value?.[0]?.id
+        if (value.length <= 0) return;
+        filter.house_id = value?.[0]?.id;
       },
       storey: (filter, value) => {
         filter.storey_min = value[0];
         filter.storey_max = value[1];
       },
       rooms: (filter, value) => {
-        if(value.length <= 0) return;
+        if (value.length <= 0) return;
         value.forEach((val, i) => {
           filter[`rooms_in[${i}]`] = val;
         });
@@ -105,26 +106,30 @@ export default {
 
     const flats = ref(null);
 
+    const freeFlats = computed(() => {
+      return flats.value.filter((flat) => flat.status === "free");
+    });
     const makeFilter = () => {
       const newFilter = {};
-      for(let key in filter.value) {
-        if(filter.value[key]) filterGetters[key](newFilter, filter.value[key]);
+      for (let key in filter.value) {
+        if (filter.value[key]) filterGetters[key](newFilter, filter.value[key]);
       }
       return newFilter;
     };
 
     const getFlats = async () => {
-      store.dispatch('loaders/start', 'loading flats');
-      flats.value = await store.dispatch('flats/getFlats', makeFilter());
-      store.dispatch('loaders/end', 'loading flats');
+      store.dispatch("loaders/start", "loading flats");
+      flats.value = await store.dispatch("flats/getFlats", makeFilter());
+      store.dispatch("loaders/end", "loading flats");
     };
 
     watch(filter, () => getFlats(), { deep: true, immediate: true });
 
     return {
       filter,
-      flats
-    }
+      flats,
+      freeFlats,
+    };
   },
   components: {
     FlatsParamsList,
@@ -132,11 +137,9 @@ export default {
     SelectLiter,
     SelectRooms,
     SelectStoreys,
-    SelectSquare
-  }
-}
+    SelectSquare,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
