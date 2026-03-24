@@ -29,7 +29,7 @@
     <section class="tw-bg-white tw-pt-80">
       <div class="wrapper">
         <div
-          :class="{ 'tw-absolute': flats }"
+          :class="{ 'tw-absolute': flats.length > 0 }"
           v-if="$store.getters['loaders/is']('loading flats')">
           <Spinner size="100px" />
         </div>
@@ -61,7 +61,7 @@ export default {
     const store = useStore();
 
     const filter = ref({
-      liter: [{ id: 3, label: "2" }],
+      liter: { id: 3, label: "2" },
       storey: null,
       rooms: null,
       square: null,
@@ -73,8 +73,7 @@ export default {
 
     const filterGetters = {
       liter: (filter, value) => {
-        if (value.length <= 0) return;
-        filter.house_id = value?.[0]?.id;
+        filter.house_id = value.id;
       },
       storey: (filter, value) => {
         filter.storey_min = value[0];
@@ -104,7 +103,7 @@ export default {
       },
     }
 
-    const flats = ref(null);
+    const flats = ref([]);
 
     const freeFlats = computed(() => {
       return flats.value.filter((flat) => flat.status === "free");

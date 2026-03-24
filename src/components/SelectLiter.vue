@@ -21,7 +21,7 @@
           'tw-border-gray tw-bg-white tw-text-secondary': !isActive(liter),
           'tw-border-orange tw-bg-orange tw-text-white active': isActive(liter),
          }"
-         :disabled="liter.id !== 3"
+         :disabled="liter.id === 1"
         @click="onInput(liter, field, handleChange)"
       >
         {{ liter.label }}
@@ -62,22 +62,18 @@ export default {
   },
   methods: {
     isActive(liter) {
-      return this.modelValue?.some(item => item.id === liter.id);
+      if(!this.modelValue) return false;
+      return this.modelValue.id === liter.id;
     },
     display(val) {
       if(!val) return '';
-      return val.map(item => item.label).join(', ');
+      return val.label;
     },
     onInput(liter, field, handleChange) {
-      const fieldSet = new Set(field.value);
-      fieldSet.has(liter)
-        ? fieldSet.delete(liter)
-        : fieldSet.add(liter);
-      const fieldValue = Array.from(fieldSet);
-      handleChange(fieldValue);
+      handleChange(liter);
     }
   },
-  
+
   components: {
     FeaturesItem,
     SelectControls
