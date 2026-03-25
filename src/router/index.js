@@ -28,8 +28,15 @@ const routes = [
 
   {
     path: '/facad',
-    name: 'facad',
-    component: () => import('@/pages/FlatsSelectionFacad.vue'),
+    component: () => import('@/layouts/PrimaryLayout.vue'),
+    children: [ 
+      {
+        path: '',
+        name: 'facad',
+        component: () => import('@/pages/FlatsSelectionFacad.vue'),
+
+      }
+    ]
   },
 
   {

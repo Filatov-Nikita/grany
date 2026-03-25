@@ -32,7 +32,7 @@ export default class ServiceApi {
         beforeRequest: [
           (request, options) => {
             if(!options?.meta?.cache) return;
-            if(this.map.has(request.url)) return this.map.get(request.url);
+            if(this.map.has(request.url)) return this.map.get(request.url).clone(); 
           },
           (request) => {
             const accessToken = Tokens.getAccessToken();
@@ -44,7 +44,8 @@ export default class ServiceApi {
         afterResponse: [
           (request, options, response) => {
             if(!(response.status >= 200 && response.status < 300 && options?.meta?.cache)) return;
-            if(!this.map.has(request.url)) this.map.set(request.url, response);
+            // if (!this.map.has(request.url)) this.map.set(request.url, response);
+            if (!this.map.has(request.url)) this.map.set(request.url, response.clone()); 
           },
           async (request, options, response) => {
             if (response.status === 401) return this.handleRejectionToken();
