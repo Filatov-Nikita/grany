@@ -12,19 +12,19 @@
         <div class="features">
           <div class="tw-flex tw-flex-wrap -tw-ml-40 tw-mb-30 -tw-mt-20 xl:tw-mb-[50px] 2xl:tw-mb-30">
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto md:tw-basis-[150px]">
-              <p class="tw-font-extrabold tw-text-lg tw-leading-100 tw-mb-10 tw-text-orange md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">21+</p>
+              <p class="tw-font-extrabold tw-text-lg tw-leading-100 tw-mb-10 tw-text-orange md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">23+</p>
               <p class="tw-leading-120">лет на рынке <br/> недвижимости</p>
             </div>
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto md:tw-basis-[150px]">
-              <p class="tw-font-extrabold tw-text-lg tw-leading-100 tw-mb-10 tw-text-orange md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">25</p>
+              <p class="tw-font-extrabold tw-text-lg tw-leading-100 tw-mb-10 tw-text-orange md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">28</p>
               <p class="tw-leading-120">реализованных <br/> домов</p>
             </div>
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto md:tw-basis-[150px]">
-              <p class="tw-font-extrabold tw-text-lg tw-leading-100 tw-mb-10 tw-text-orange md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">15</p>
+              <p class="tw-font-extrabold tw-text-lg tw-leading-100 tw-mb-10 tw-text-orange md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">18</p>
               <p class="tw-leading-120">домов сданы <br/> раньше срока</p>
             </div>
             <div class="tw-pt-20 tw-pl-40 tw-w-1/2 md:tw-w-auto">
-              <p class="tw-font-extrabold tw-text-lg tw-leading-100 tw-mb-10 tw-text-orange md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">4 022</p>
+              <p class="tw-font-extrabold tw-text-lg tw-leading-100 tw-mb-10 tw-text-orange md:tw-text-xl10 xl:tw-text-xl 2xl:tw-text-xl10">4 772</p>
               <p class="tw-leading-120">квартир</p>
             </div>
           </div>

@@ -6,7 +6,7 @@
 
         <div class="tw-flex tw-flex-wrap tw-space-x-10 tw-mb-20 md:tw-mb-30">
           <button
-            class="tab"
+            class="tab tw-whitespace-nowrap"
             :class="{ 'tab--active': curTab.id === tab.id }"
             v-for="tab in tabs"
             :key="tab.id"
